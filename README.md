@@ -1,4 +1,4 @@
-php-symfony-dateinterval
-========================
+DateInterval Bundle
+===================
 
 A Symfony bundle for the DateInterval library for Doctrine.
