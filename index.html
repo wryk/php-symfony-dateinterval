@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>DateInterval Bundle by herrera-io</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>DateInterval Bundle</h1>
+        <p>A Symfony bundle for the DateInterval library for Doctrine.</p>
+
+        <p class="view"><a href="https://github.com/herrera-io/php-symfony-dateinterval">View the Project on GitHub <small>herrera-io/php-symfony-dateinterval</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/herrera-io/php-symfony-dateinterval/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/herrera-io/php-symfony-dateinterval/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/herrera-io/php-symfony-dateinterval">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>DateInterval Bundle</h1>
+
+<p><a href="https://travis-ci.org/herrera-io/php-symfony-dateinterval"><img src="https://travis-ci.org/herrera-io/php-symfony-dateinterval.png?branch=master" alt="Build Status"></a></p>
+
+<p>A Symfony bundle for the DateInterval library for Doctrine.</p>
+
+<h2>Summary</h2>
+
+<p>The bundle will automatically</p>
+
+<ul>
+<li>register the <code>dateinterval</code> Doctrine mapping type</li>
+<li>add the <code>DATE_INTERVAL</code> DQL function</li>
+</ul><p>to the default entity manager (<code>doctrine.orm.entity_manager</code>).</p>
+
+<h2>Installation</h2>
+
+<p>Add it to your list of Composer dependencies:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>composer require herrera-io/dateinterval-bundle<span class="o">=</span>1.*
+</pre></div>
+
+<p>Add it to your <code>app/AppKernel.php</code> file:</p>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">registerBundles</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$bundles</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="c1">// ... snip ...</span>
+        <span class="k">new</span> <span class="nx">Herrera\Symfony\DateInterval\DateIntervalBundle</span><span class="p">()</span>
+        <span class="c1">// ... snip ...</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>Usage</h2>
+
+<h3>In your entities</h3>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Column(type="dateinterval")</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$interval</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>In your queries</h3>
+
+<div class="highlight"><pre><span class="k">SELECT</span> <span class="n">j</span> <span class="k">FROM</span> <span class="n">Jobs</span> <span class="n">j</span> <span class="k">WHERE</span> <span class="n">j</span><span class="p">.</span><span class="nb">interval</span> <span class="o">&lt;</span> <span class="n">DATE_INTERVAL</span><span class="p">(</span><span class="s1">'PT1H'</span><span class="p">)</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/herrera-io">herrera-io</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
